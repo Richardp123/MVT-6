@@ -4,7 +4,7 @@
     background-image: url(img/mvtBackground.svg);
     top: 0;
     width: 100vw;
-    
+
 }
 
 #mainPage {
@@ -42,7 +42,7 @@
     border-width:15px;
     border-color: gray;
     background-color: black;
-    font-size: 2.5em;
+    font-size: 1.5em;
     font-weight: bold;
     color: white;
 }
