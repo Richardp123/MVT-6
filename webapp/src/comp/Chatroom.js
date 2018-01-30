@@ -63,7 +63,6 @@ class Chatroom extends Component {
 
   render() {
 
-
     var config = null;
 
     if (this.state.mode === 0) {
@@ -106,16 +105,14 @@ class Chatroom extends Component {
     return (
       <div>
 
-              // CHATROOM HERE
-
-              {config}
-              <hr/>
-              <div id="allUsers">
-                Users in the chatroom right now
-                <div id="users">
-                {allUsers}
-                </div>
-              </div>
+        {config}
+        <hr/>
+        <div id="allUsers">
+          Users in the chatroom right now
+          <div id="users">
+          {allUsers}
+          </div>
+        </div>
 
 
       </div>

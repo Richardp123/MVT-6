@@ -1,22 +1,41 @@
 import React, { Component } from 'react';
 import './App.css';
+import Chatroom from "./comp/Chatroom";
+import Landing from "./comp/Landing";
 
 class App extends Component {
 
+  constructor(props){
+    super(props);
+
+    this.state = {
+      landingDisplay:true,
+      chatroomDisplay:false
+    }
+    this.enterChatroom = this.enterChatroom.bind(this);
+  }
+
+  enterChatroom(show){
+    this.setState({
+      landingDisplay:false,
+      chatroomDisplay:true
+    })
+  }
+
   render() {
+
+    var mycomp = null;
+
+    if(this.state.landingDisplay === true){
+      mycomp = <Landing enterChatroom={this.enterChatroom}/>;
+    } else if(this.state.chatroomDisplay === true){
+      mycomp = <Chatroom />;
+    }
 
     return (
       <div className="App">
-        <div id="mainPage">
 
-        <div id="mvtInfo">MOTOR VEHICKLE FEFT IS THE SICKSTH ITTERATION OF THE POPULAR CAR STEALING GAME MOTER VHIKKEL THEPHTD. ITS GOT AKSHIN PACKED CAR STEELING AND DRIVING. PLAY WITH YOURE FEIRNDS OR ALONE. YOU WILL HAVE LOTS OF FUNS.
-        <br />
-        <button id="mvtBut">ENTER</button>
-        </div>
-
-        </div>
-        <div id="mvtLogo">
-        </div>
+        {mycomp}
 
       </div>
     );
